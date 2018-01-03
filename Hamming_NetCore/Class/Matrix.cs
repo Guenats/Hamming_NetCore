@@ -27,6 +27,7 @@ namespace Hamming_NetCore.Class
             Console.ReadLine();
         }
 
+        //Compare le nombre d'occurence entre deux string
         public static int CompareOccurenceString(string item1, string item2)
         {
             int i = 0;
@@ -42,6 +43,7 @@ namespace Hamming_NetCore.Class
             return result;
         }
 
+        //Permet d'afficher la distance d'hamming pour chaque croissement d'une matrice
         public static List<Line> AfficheHammingDistance(int[,] tab)
         {
             List<Croissement> listCroissement = new List<Croissement>();
@@ -83,7 +85,7 @@ namespace Hamming_NetCore.Class
             return listLine;
         }
 
-
+        //Permet de recalculer les cluster et ainsi trouver le meilleur résultat
         public static void RecalculCluster(List<Cluster> listCluster)
         {
             if(listCluster.Exists(item=>item.ListLine.Count == 1))
@@ -133,7 +135,7 @@ namespace Hamming_NetCore.Class
             }   
         }
 
-
+        //Permet de diviser dans des clusters les elements
         public static void DiviseInCluster(List<Line> listLine)
         {
             
@@ -157,6 +159,8 @@ namespace Hamming_NetCore.Class
             x++;
             RecalculCluster(listCluster);
             }
+
+        //Affiche les clusters
         public static void AfficheCluster(List<Cluster> listCluster)
         { 
             int n = 1;
